@@ -1,0 +1,28 @@
+<%= form_for(@player) do |f| %>
+<li class='form'>
+  <%= f.label :Nombre%>
+  <%= f.text_field :name%>
+</li>
+<li class='form'>
+  <%= f.label :Apellido1%>
+  <%= f.text_field :lastname1%>
+</li>
+<li class='form'>
+  <%= f.label :Apellido2%>
+  <%= f.text_field :lastname2%>
+</li>
+<li class='form'>
+  <%= f.label :Posición%>
+  <%= f.text_field :position%>
+</li>
+<li class='form'>
+  <%= f.label :Fecha_de_nacimiento%>
+  <%= f.date_field :birthdate%>
+</li>
+<li class='form'>
+  <%= f.file_field :avatar %>
+</li>
+<li>
+  <%= f.submit "save"%>
+</li>
+<%end%>

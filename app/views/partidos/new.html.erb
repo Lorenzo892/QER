@@ -1,0 +1,19 @@
+
+    <%= form_tag('/partidos', :method=>'post') do %>
+    <li>
+      <%= label_tag :Rival%>
+      <%= text_field_tag :opponent%>
+    </li>
+    <li>
+      <%= label_tag :Fecha%>
+      <%= date_field_tag :date%>
+    </li>
+    <li>
+      <%= label_tag :Hora%>
+      <%= time_field_tag :time%>
+    </li>
+
+    <li>
+      <%= submit_tag "save"%>
+    </li>
+    <%end%>

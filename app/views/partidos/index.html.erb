@@ -1,0 +1,10 @@
+
+    <h1>Partidos :</h1>
+    <ul>
+
+      <%@partidos.each do |partido| %>
+      <li>
+        <%=link_to "- #{partido.opponent}: #{partido.date} - #{partido.time}", partido_path(partido.id), class: "text" %>
+      </li>
+      <%end%>
+    </ul>

@@ -1,0 +1,9 @@
+
+    <%if current_user.tipo_usuario == "admin"%>
+    <%= link_to 'Editar', edit_partido_path%>
+    <%end%>
+    <%= link_to 'Partidos', partidos_path%>
+    <%= link_to 'Convocatoria', new_partido_players_list_path(@partido.id, @playerslist.id)%>
+    <li> Rival: <%=@partido.opponent%> </li>
+    <li> Fecha: <%=@partido.date%> </li>
+    <li> Hora:  <%=@partido.time%> </li>

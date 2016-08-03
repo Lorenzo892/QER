@@ -1,0 +1,14 @@
+  <div class="main-container">
+    <h1 class='title'>Jugadores :</h1>
+    <ul>
+
+      <%@players.each do |player| %>
+      <li>
+        <%if player.avatar.url%>
+        <%= image_tag(player.avatar.url, :class => "index-image") %>
+        <%end%>
+        <%=link_to "- #{player.name}: #{player.lastname1} - #{player.position}", player_path(player.id), class: "text" %>
+      </li>
+      <%end%>
+    </ul>
+  </div>

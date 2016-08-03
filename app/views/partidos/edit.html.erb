@@ -1,0 +1,22 @@
+
+    <h1>Editar Perfil</h1>
+
+    <%= form_tag(partido_path(@partido.id), :method=>'put') do %>
+
+    <li>
+      <%= label_tag :Rival%>
+      <%= text_field_tag :opponent, @partido.opponent%>
+    </li>
+
+    <li>
+      <%= label_tag :Fecha%>
+      <%= text_field_tag :date, @partido.date%>
+    </li>
+    <li>
+      <%= label_tag :Hora%>
+      <%= text_field_tag :time, @partido.time%>
+    </li>
+    <li>
+      <%= submit_tag "save"%>
+    </li>
+    <%end%>

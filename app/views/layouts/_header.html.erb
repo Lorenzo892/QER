@@ -1,0 +1,32 @@
+<nav>
+  <ul>
+    <li>
+      <%= link_to 'Home', root_path%>
+    </li>
+    <li>
+      <%= link_to 'Jugadores', players_path%>
+    </li>
+
+    <li>
+      <%= link_to 'Nuevo Jugador', new_player_path%>
+    </li>
+
+    <li>
+      <%= link_to 'Partidos', partidos_path%>
+    </li>
+
+    <li>
+      <%= link_to 'Nuevo Partido', new_partido_path%>
+    </li>
+
+    <li>
+      <%unless current_page? (new_user_session_path)%>
+      <% if user_signed_in? %>
+      <%= link_to 'Log out', destroy_user_session_path, method: 'DELETE'%>
+      <% else %>
+      <%= link_to 'Log in', new_user_session_path%>
+      <% end %>
+      <%end%>
+    </li>
+  </ul>
+</nav>

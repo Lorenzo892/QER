@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_partido: one
+  jugador1: 1
+  jugador2: 1
+  jugador3: 1
+  jugador4: 1
+  jugador5: 1
+  jugador6: 1
+  jugador7: 1
+  jugador8: 1
+  jugador9: 1
+  jugador1: 1
+  jugador2: 1
+  jugador3: 1
+  jugador4: 1
+  jugador5: 1
+  jugador6: 1
+  jugador7: 1
+  jugador8: 1
+  jugador9: 1
+
+two:
+  id_partido: two
+  jugador1: 1
+  jugador2: 1
+  jugador3: 1
+  jugador4: 1
+  jugador5: 1
+  jugador6: 1
+  jugador7: 1
+  jugador8: 1
+  jugador9: 1
+  jugador1: 1
+  jugador2: 1
+  jugador3: 1
+  jugador4: 1
+  jugador5: 1
+  jugador6: 1
+  jugador7: 1
+  jugador8: 1
+  jugador9: 1

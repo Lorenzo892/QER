@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Partidos :</h1>
+    <ul>
+
+      <%@players.each do |player| %>
+      <li>
+        <%= "#{player.nom} - #{player.cognom1}- #{player.posicio}" %>
+      </li>
+      <%end%>
+    </ul>
+
+  </body>
+</html>

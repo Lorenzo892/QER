@@ -1,0 +1,31 @@
+    <div class="main-container">
+      <h2 class="profile-title">Player profile</h2>
+      <% if @player.avatar.url %>
+        <div class="image-left">
+          <%= image_tag(@player.avatar.url, :class => "profile-image") %>
+        </div>
+      <%end%>
+      <div class="information-right">
+        <p>
+          Nom: <%=@player.name%>
+        </p>
+         <p>
+           Primer Apellido: <%=@player.lastname1%>
+         </p>
+         <p>
+           Segundo Apellido:  <%=@player.lastname2%>
+         </p>
+         <p>
+           Posición: <%=@player.position%>
+         </p>
+         <p>
+           Fecha de nacimeinto:  <%=@player.birthdate%>
+         </p>
+      </div>
+    </div>
+
+    <div class="link-to-edit">
+      <%if current_user.id == @player.user_id%>
+      <%= link_to 'Editar', edit_player_path%>
+      <%end%>
+    </div>

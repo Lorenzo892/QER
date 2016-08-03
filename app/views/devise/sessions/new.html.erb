@@ -1,0 +1,36 @@
+<div class="container-homepage">
+
+  <h1 class="hompage-title">Quimic Equip de Rugby</h1>
+  <div class="container-login">
+    <div class="content-login">
+      <h2 class="log-in-title">Log in</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field-email">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, :class => "field-input"  %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" , :class => "field-input"  %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+      <% end -%>
+
+      <div class="actions">
+        <%= f.submit "Log in", :class => "submit-button" %>
+      </div>
+      <% end %>
+
+      <div class="links-bottom">
+          <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

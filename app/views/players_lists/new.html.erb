@@ -1,130 +1,91 @@
-
-
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script>
 $(function() {
-  var ary = [];
-  var finalAry = [];
+var ary = [];
+var finalAry = [];
 
-  $('#PlayersList').html( '' );
+$('#PlayersList').html( '' );
+// $('#FinalPlayers').html( '' );
 
-  $.ajax({
-    type: 'GET',
-    url: '/json/getplayers',
-    success: function(response){
-       for (var i = 0; i < response.length; i++) {
-        ary.push(response[i]);
-        // console.log(ary[i]);
-      }
-        SetPlayersLists();
-        SetFinalPayers();
-    },
-
-    error: function(){
-      console.log("error34")
+$.ajax({
+  type: 'GET',
+  url: '/json/getplayers',
+  success: function(response){
+     for (var i = 0; i < response.length; i++) {
+      ary.push(response[i]);
+      // console.log(ary[i]);
     }
-  })
+      SetPlayersLists();
+      SetFinalPayers();
+  },
 
-function SetPlayersLists(){
-  console.log(ary)
-  for ( var i=0; i<ary.length; i++ ) {
-    $("<div class='potentialplayer' >" + ary[i].name + '</div>').data( 'number', ary[i].id ).attr( 'id', 'player'+ ary[i].id ).appendTo( '#PlayersList' ).draggable( {
-      containment: '#content',
-      helper: 'clone',
-      stack: '#PlayersList div',
-      cursor: 'move',
-      revert: true
-    } );
-  } }
-
-
-
-
-  // Create the card slots
-  function SetFinalPayers(){
-
-
-    for ( var i=1; i<=12; i++ ) {
-    $('.left').append($('<p>' +i+'</p>'))
-     $("<div class='playerbox'> - </div>").data( 'number', i ).attr( 'id', 'box'+ i ).appendTo( '.left' ).droppable({
-        accept: '.left div',
-        // hoverClass: 'hovered',
-        drop: handlePlayerDrop
-      });
-    }
-    for ( var i=13; i<=23; i++ ) {
-    $('.right').append($('<p>' +i+'</p>'))
-     $("<div class='playerbox'> - </div>").data( 'number', i ).attr( 'id', 'box'+ i ).appendTo( '.right' ).droppable({
-        accept: '.right div',
-        // hoverClass: 'hovered',
-        drop: handlePlayerDrop
-      });
-    }
-
-
-
-    $("<button type='button' class='savebutton' name='save'>Guardar</button>").appendTo( '.right' );
+  error: function(){
+    console.log("error34")
   }
-
-    function handlePlayerDrop(event, ui) {
-      ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
-      ui.draggable.draggable( 'option', 'revert', false );
-      finalAry.push(ui.draggable.data('number'));
-      console.log(finalAry);
-    }
-
-  $('body').on('click', '.savebutton' , function(e) {
-    e.preventDefault();
-    console.log('dentro');
-    console.log(finalAry);
-    var partido_id = (window.location.href.split('/'))[4];
-    console.log(partido_id);
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost:3000/partidos/'+ partido_id +'/players_lists',
-      data: {idPlayers: finalAry},
-      success: function(data){
-        console.log("success")
-        // var ingredient_name = response.name
-        // var new_ingredient = "<li>" + ingredient_name + "</li>"
-        // var ingredient_calories = response.calories
-        // console.log($('.calories').text())
-        // var sandwich_calories = ingredient_calories + parseInt($('.calories').text())
-        // $('ul').append(new_ingredient);
-        // $('span').text(sandwich_calories)
-
-      },
-
-      error: function(error){
-        console.log(error)
-      }
-    })
-  })
 })
 
+function SetPlayersLists(){
+console.log(ary)
+for ( var i=0; i<ary.length; i++ ) {
+  $("<div class='potentialplayer' >" + ary[i].name + '</div>').data( 'number', ary[i].id ).attr( 'id', 'player'+ ary[i].id ).appendTo( '#PlayersList' ).draggable( {
+    containment: '#content',
+    helper: 'clone',
+    stack: '#PlayersList div',
+    cursor: 'move',
+    revert: true
+  } );
+} }
 
+// Create the card slots
+function SetFinalPayers(){
+  for ( var i=1; i<=23; i++ ) {
+    $('#FinalPlayers').append($('<p>' +i+'</p>'))
+    $("<div class='playerbox'></div>").data( 'number', i ).attr( 'id', 'box'+ i ).appendTo( '#FinalPlayers' ).droppable({
+      accept: '#PlayersList div',
+      drop: handlePlayerDrop
+    });
+  }
+  $("<button type='button' class='savebutton' name='save'>Guardar</button>").appendTo( '#FinalPlayers-left' );
+}
 
+  function handlePlayerDrop(event, ui) {
+    ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    finalAry.push(ui.draggable.data('number'));
+    console.log(finalAry);
+  }
 
+$('body').on('click', '.savebutton' , function(e) {
+  e.preventDefault();
+  console.log('dentro');
+  console.log(finalAry);
+  var partido_id = (window.location.href.split('/'))[4];
+  console.log(partido_id);
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost:3000/partidos/'+ partido_id +'/players_lists',
+    data: {idPlayers: finalAry},
+    success: function(data){
+      console.log("success")
+    },
 
-
-
+    error: function(error){
+      console.log(error)
+    }
+  })
+})
+})
 
 </script>
 <body>
 
-  <div id="content">
-    <div class="row">
-      <div class="col-xs-4" id="PlayersList">
-      </div>
-      <div class="col-xs-4" id="FinalPlayers">
-        <!-- <div class="row"> -->
-          <div class="col-md-6 left">hello</div>
-
-          <div class="col-md-6 right">hello</div>
-        <!-- </div> -->
-      </div>
-    </div>
+<div id="content">
+  <div class="row">
+    <div class="col-md-5" id="PlayersList"></div>
+    <div class="col-md-4" id="FinalPlayers"></div>
   </div>
+</div>
 
 </body>

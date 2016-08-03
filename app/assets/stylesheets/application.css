@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+#FinalPlayers > p {
+  margin: 0px;
+}
 .col-right{
   display: inline-block;
 }

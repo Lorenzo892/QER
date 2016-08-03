@@ -22671,3 +22671,281 @@ Processing by PartidosController#new as HTML
 Completed 200 OK in 548ms (Views: 527.9ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/partidos" for 127.0.0.1 at 2016-08-03 20:50:07 +0200
+Processing by PartidosController#index as HTML
+  Rendering partidos/index.html.erb within layouts/application
+Started GET "/partidos/2" for 127.0.0.1 at 2016-08-03 20:50:08 +0200
+Processing by PartidosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPartido Load (104.3ms)[0m  [1m[34mSELECT "partidos".* FROM "partidos"[0m
+  [1m[36mPartido Load (1.2ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered partidos/index.html.erb within layouts/application (438.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (54.0ms)
+Completed 200 OK in 3077ms (Views: 2409.5ms | ActiveRecord: 105.4ms)
+
+
+  [1m[36mPlayerList Load (0.8ms)[0m  [1m[34mSELECT  "player_lists".* FROM "player_lists" WHERE "player_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering partidos/show.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered partidos/show.html.erb within layouts/application (77.1ms)
+  Rendered layouts/_header.html.erb (14.8ms)
+Completed 200 OK in 3070ms (Views: 687.0ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 20:50:14 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.9ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (32.3ms)
+Completed 200 OK in 655ms (Views: 619.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 20:50:17 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (63.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 273ms (Views: 202.0ms | ActiveRecord: 63.9ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 20:56:31 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (1.1ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (28.4ms)
+Completed 200 OK in 631ms (Views: 608.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 20:56:33 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (3.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 292ms (Views: 257.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 20:59:48 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (34.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (39.0ms)
+Completed 200 OK in 659ms (Views: 634.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 20:59:49 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (3.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 278ms (Views: 252.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:00:50 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (1.0ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (27.4ms)
+Completed 200 OK in 674ms (Views: 648.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:00:51 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (3.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 259ms (Views: 248.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:01:17 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.9ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (42.7ms)
+Completed 200 OK in 627ms (Views: 600.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:01:18 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (6.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 266ms (Views: 249.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:05:26 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.7ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (28.7ms)
+Completed 200 OK in 651ms (Views: 607.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:05:27 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (3.3ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 306ms (Views: 293.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:06:27 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (26.3ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (42.0ms)
+Completed 200 OK in 658ms (Views: 630.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:06:28 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (4.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 309ms (Views: 294.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:06:58 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (30.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (40.0ms)
+Completed 200 OK in 705ms (Views: 679.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:06:59 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (4.0ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 285ms (Views: 265.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:11:23 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.7ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  [1m[36mPlayer Load (2.2ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+  Rendered players_lists/new.html.erb within layouts/application (70.0ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (38.5ms)
+Completed 200 OK in 705ms (Views: 665.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:11:24 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (2.4ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 268ms (Views: 256.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:14:04 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (43.3ms)
+Completed 200 OK in 654ms (Views: 614.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:14:05 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (3.5ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 273ms (Views: 258.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:15:13 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (39.5ms)
+Completed 200 OK in 643ms (Views: 604.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:15:14 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (3.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 286ms (Views: 267.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:15:30 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.8ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (40.9ms)
+Completed 200 OK in 738ms (Views: 703.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:15:31 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (1.6ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 274ms (Views: 260.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:24:48 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (28.6ms)
+Completed 200 OK in 837ms (Views: 811.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:24:50 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (1.9ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 317ms (Views: 307.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:26:30 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (27.3ms)
+Completed 200 OK in 645ms (Views: 619.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:26:31 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 290ms (Views: 274.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/partidos/2/players_lists/new.2" for 127.0.0.1 at 2016-08-03 21:27:27 +0200
+Processing by PlayersListsController#new as 
+  Parameters: {"partido_id"=>"2"}
+  [1m[36mPartido Load (0.6ms)[0m  [1m[34mSELECT  "partidos".* FROM "partidos" WHERE "partidos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering players_lists/new.html.erb within layouts/application
+  Rendered players_lists/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (41.9ms)
+Completed 200 OK in 661ms (Views: 622.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/json/getplayers" for 127.0.0.1 at 2016-08-03 21:27:28 +0200
+Processing by PlayersListsController#get_players_json as */*
+  [1m[36mPlayer Load (12.8ms)[0m  [1m[34mSELECT "players".* FROM "players"[0m
+Completed 200 OK in 233ms (Views: 208.3ms | ActiveRecord: 12.8ms)
+
+

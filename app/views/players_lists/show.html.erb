@@ -18,7 +18,7 @@ $(function(){
 
   function handleDrop(event, ui) {
     ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
-    ui.draggable.draggable( 'option', 'revert', true );
+    ui.draggable.draggable( 'option', 'revert', false );
     var position = $(this).attr('id');
     var player = ui.draggable.attr('id');
     lineupAry[position] = player
@@ -26,6 +26,30 @@ $(function(){
 
   }
 
+
+
+  $('.lineupbutton').on('click', function(e) {
+    e.preventDefault();
+    console.log('dentro');
+    console.log(lineupAry);
+    var partido_id = (window.location.href.split('/'))[4];
+    console.log(partido_id);
+    var players_list_id = (window.location.href.split('/'))[6];
+    console.log(players_list_id);
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:3000/partidos/'+ partido_id +'/players_lists'+players_list_id+'/lineups',
+      data: {idPlayers: lineupAry},
+      success: function(response){
+        console.log("success")
+                // window.location.href = response;
+      },
+  //
+  //     error: function(error){
+  //       console.log(error)
+  //     }
+    })
+  })
 
 
 });
@@ -65,6 +89,6 @@ $(function(){
       <div class="col-md-2 box" id='pos7'></div>
       <div class="col-md-1"></div>
     </div>
-    <button type="button" name="button">Guardar</button>
+    <button type="button" class='lineupbutton' name="save">Guardar</button>
   </div>
 </div>

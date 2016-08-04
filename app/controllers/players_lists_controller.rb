@@ -16,12 +16,13 @@ class PlayersListsController < ApplicationController
     my_partido.player_list = PlayerList.new
     my_partido.player_list.players = players_list
 
-
     render json: { redirect_to: url_for(action: :index) }, status: :ok
   end
 
+  def show
+    @players = PlayerList.find_by(partido_id: params[:partido_id]).players
+  end
   def index
-    # @product = Product.find(params[:product_id])
-    # @bets = @product.bets
+    
   end
 end

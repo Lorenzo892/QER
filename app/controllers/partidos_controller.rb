@@ -12,9 +12,9 @@ class PartidosController < ApplicationController
   end
 
   def create
-    partido = Partido.new(rival: params[:rival],
-                      fecha: params[:fecha],
-                      hora: params[:hora])
+    partido = Partido.new(opponent: params[:opponent],
+                      date: params[:date],
+                      time: params[:time])
    if partido.save
      redirect_to partidos_path
    else
@@ -28,9 +28,9 @@ class PartidosController < ApplicationController
 
   def update
     partido = Partido.find_by(id: params[:id])
-    partido.update(rival: params[:rival])
-    partido.update(fecha: params[:fecha])
-    partido.update(hora: params[:hora])
+    partido.update(opponent: params[:opponent])
+    partido.update(date: params[:date])
+    partido.update(time: params[:time])
 
     redirect_to partidos_path
   end

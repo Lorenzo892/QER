@@ -1,4 +1,4 @@
-</style>
+
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script>
@@ -47,12 +47,12 @@ function SetFinalPayers(){
       drop: handlePlayerDrop
     });
   }
-  $("<button type='button' class='savebutton' name='save'>Guardar</button>").appendTo( '#FinalPlayers-left' );
+  $("<button type='button' class='savebutton' name='save'>Guardar</button>").appendTo( '#FinalPlayers' );
 }
 
   function handlePlayerDrop(event, ui) {
     ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
-    ui.draggable.draggable( 'option', 'revert', false );
+    ui.draggable.draggable( 'option', 'revert', true );
     finalAry.push(ui.draggable.data('number'));
     console.log(finalAry);
   }
@@ -67,8 +67,9 @@ $('body').on('click', '.savebutton' , function(e) {
     type: 'POST',
     url: 'http://localhost:3000/partidos/'+ partido_id +'/players_lists',
     data: {idPlayers: finalAry},
-    success: function(data){
+    success: function(response){
       console.log("success")
+              window.location.href = response;
     },
 
     error: function(error){
